@@ -1,1 +1,51 @@
 User Stories
+
+-There should be a 10x10 board with A-T on the verticle axis and 1-10 on the horizontal axis
+-3
+
+-There should be the following ships available to each player:
+	1 - 2 squares
+	2 - 3 squares
+	1 - 4 squares
+	1 - 5 squares
+	(squares in line)
+-3
+
+-User can place their ships in a horizontal or verticle orientation - not diagonal
+-1
+
+-The user should be able to see which player's turn it is.
+-1
+
+-Each player can pick a space on the board to fire on the enemy's board once per turn 
+	and player will be notified if hit or miss
+-5
+
+-Player who sinks all of the other player's ships wins
+-1
+
+-There will be two boards, one to show the player's board and one to show hits and misses on the enemy's board
+-8
+
+-Game will have a title screen
+-1
+
+-Player can start new game
+-1
+
+-Game will be played against computer AI
+-13
+
+-Game will be playable against another player over network socket
+-20
+
+-Game will be displayed text based on console
+-8
+
+-Game will be displayed using textures in OpenGl
+-35
+
+-Game will have sound effects
+-20
+
+
