@@ -1,0 +1,12 @@
+CS372 Project 1 Diary
+Aisha Peters
+
+Date: 2/8/2017
+Task: Developed User Stories
+Time: 45 min
+Difficulty: 1
+
+Worked with Sam to develop some User Stories for the project and discuss
+possible methods of implementing the project design. I felt that the process
+was useful for fully evaluating just what it is that we intend to design, and
+helps with brainstorming of how to go about doing it.

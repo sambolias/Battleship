@@ -4,14 +4,14 @@ User Stories
 -2/8/17
 
 
--There should be a 10x10 board with A-T on the verticle axis and 1-10 on the horizontal axis
+-There should be a 10x10 board with A-J on the verticle axis and 1-10 on the horizontal axis
 -3
 
 -There should be the following ships available to each player:
-	1 - 2 squares
-	2 - 3 squares
-	1 - 4 squares
-	1 - 5 squares
+	1 ship of 2 squares
+	2 ship of 3 squares
+	1 ship of 4 squares
+	1 ship of 5 squares
 	(squares in line)
 -3
 
