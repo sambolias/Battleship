@@ -1,4 +1,8 @@
 User Stories
+-Sam Erie, Aisha Peters
+-CS372
+-2/8/17
+
 
 -There should be a 10x10 board with A-T on the verticle axis and 1-10 on the horizontal axis
 -3
