@@ -1,0 +1,14 @@
+CS372 Project 1 Diary
+Sam Erie
+
+Date: 2/8/2017
+Task: Developed User Stories
+Time: 45 min
+Difficulty: 1
+
+Worked with Aisha to develop some User Stories for the project and discuss
+possible methods of implementing the project design. This process helped
+to break the project into simple modules, and to see a way to build less
+complicated modules in a way that they will work with more time consuming 
+ones like OpenGl if we have the time.
+Started github repo: https://github.com/sambolias/Battleship.git 
