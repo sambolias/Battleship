@@ -1,6 +1,18 @@
 CS372 Project 1 Diary
 Aisha Peters
 
+Date: 2/13/2017
+Task: Pair Coding
+Time: 1 hr 45 min
+Difficulty: 1
+
+Worked with Sam to make psuedo code to work out the code's layout for the project.
+We now have an rough shell to work with and expand upon as neccesary.
+We also started some coding for the board class and now have an
+empty grid to start adding ships to. The pair coding was very useful for keeping
+us both on track with what the other thought for possible code implementation,
+which makes it easier to keep the code concise and coherent.
+
 Date: 2/8/2017
 Task: Developed User Stories
 Time: 45 min
