@@ -1,0 +1,28 @@
+Pseudo-Code for Battleship
+
+
+Objects
+
+text prompt to construct game object
+game needs to know ships position only to be constructed
+
+to start 1st player is user, 2nd is computer
+
+ship pos defined by coords for nose (bow) of ship (ex: b7) and orientation (vertical/horizontal)
+
+ships array of [block number] initilize storing 1's, become 0 if hit
+add all ship array elements on players board to test for game over (all spaces hit = 0)
+
+game- > run(), bool player1
+
+-player move prompt
+-report move -update boards/ships
+-report sunk ship
+-check for gameover
+-flip turn boolean
+-loop
+
+
+
+
+player -> boardmatrix [10][10] init to - ship unhit square 1, ship hit x, 5 ship objects
