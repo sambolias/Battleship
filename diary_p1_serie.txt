@@ -1,6 +1,29 @@
 CS372 Project 1 Diary
 Sam Erie
 
+
+Date: 2/20/2017
+Task: Pair Coding
+Time: 2 hr
+Difficulty: 1
+
+Our second test was to place ships on grid. We planned
+how to init our board and ship objects in a way that 
+ships had error flag and would only place on board if they 
+were on board, and were not overlapping ships. From this we 
+ended up for a checkHit() and updateGrid() function and 
+much more insight into the overall organization of the final program. 
+
+Date: 2/13/2017
+Task: Pair Coding
+Time: 1 hr 45 min
+Difficulty: 1
+
+We wrote psuedo code to agree on the start of object structure
+for programs. Then we started coding in c++. Creating the game,
+player, board, and ship classes. And made our first test to print 
+an initialized board grid, which passed. After that some refactoring.
+
 Date: 2/8/2017
 Task: Developed User Stories
 Time: 45 min
@@ -12,3 +35,4 @@ to break the project into simple modules, and to see a way to build less
 complicated modules in a way that they will work with more time consuming 
 ones like OpenGl if we have the time.
 Started github repo: https://github.com/sambolias/Battleship.git 
+

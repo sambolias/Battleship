@@ -4,8 +4,13 @@
 
 bool board::placeShip(ship &place)
 {
-	if (fitsOnBoard(place))
+	if (place.good)
 	{
+		for (auto i : place.damage)
+		{
+			if (checkHit(i.x, i.y)) return false;
+		}
+		
 		playerShips.push_back(place);
 		return true;
 	}
@@ -13,9 +18,34 @@ bool board::placeShip(ship &place)
 	return false;
 }
 
-bool board::fitsOnBoard(ship &test)
+bool board::checkHit(int x, int y)
 {
-	return false;	//needs test
+	for (auto i : playerShips)
+	{
+		for (auto j : i.damage)
+		{
+			if (x == j.x && y == j.y) return true;
+		}
+	}
+
+	return false;
+}
+
+void board::updateGrid(int hx, int hy)
+{
+	for (auto i : playerShips)
+	{
+		for (auto j : i.damage)
+		{
+			char h = '1';
+			if (j.hit) h = '0';
+			
+				grid[j.x][j.y] = h;
+			
+		}
+	}
+
+	grid[hx][hy] = 'x';
 }
 
 
@@ -30,7 +60,13 @@ board::board()
 
 int main()
 {
+	bool test;
 	board b;
+	ship s(5, 5, 3, false);
+	ship t(5, 5, 5, true);
+	b.placeShip(s);
+	test = b.placeShip(t);
+	b.updateGrid(0, 0);
 
 	for (int y = 0; y < 10; y++)
 	{
@@ -40,7 +76,32 @@ int main()
 		}
 		cout << "\n";
 	}
+
+	bool one = true, two = true;
+
+	cout << (test ? "true" : "false")<<"\n";
 	
     return 0;
 }
 
+ship::ship(int x, int y, int t, bool verticle) : type(t)
+{
+	
+	for (int i = 0; i < getSize(); i++)
+	{
+		shipData dataPoint(x, y);
+		if ((x >= 0 && x <= 9) && (y >= 0 && y <= 9))
+		{
+			good = true;
+			damage.push_back(dataPoint);
+		}
+		else
+		{
+			good = false;
+			break;
+		}
+
+		verticle ? y++ : x++;
+
+	}
+}
