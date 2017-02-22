@@ -1,6 +1,20 @@
 CS372 Project 1 Diary
 Aisha Peters
 
+Date: 2/20/2017
+Task: Pair Coding
+Time: 2 hr
+Difficulty: 3
+
+Worked on code as a pair to establish the ship class and get it printing on the test board output.
+We can now place a ship of the available size types with horizontal or vertical orientation and have
+coded checking for placing ships on top of eachother or off the board. We also have a function to
+determine if a space is occupied by a ship. Pair coding was especially useful for this step of the
+project as we both had different thoughts on how to implement the ships and worked together to find
+something that worked well for thet task. I find this to be moer beneficial than working on the
+code individually and then having an update meeting later to see where everyone is and what they did.
+This way we are boh up to speed and actively thinking about the next step.
+
 Date: 2/13/2017
 Task: Pair Coding
 Time: 1 hr 45 min
@@ -9,9 +23,9 @@ Difficulty: 1
 Worked with Sam to make psuedo code to work out the code's layout for the project.
 We now have an rough shell to work with and expand upon as neccesary.
 We also started some coding for the board class and now have an
-empty grid to start adding ships to. The pair coding was very useful for keeping
-us both on track with what the other thought for possible code implementation,
-which makes it easier to keep the code concise and coherent.
+empty grid to start adding ships to. The pair coding, though slow, was very useful for keeping
+us both on track with what the other thought for possible code implementation.
+This makes it easier to keep the code understood by both parties.
 
 Date: 2/8/2017
 Task: Developed User Stories
