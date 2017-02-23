@@ -1,3 +1,9 @@
+//Battleship.h
+//Sam Erie and Aisha Peters
+//
+//For CS 372
+//Project 1
+
 #pragma once
 
 
