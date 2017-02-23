@@ -1,6 +1,13 @@
 CS372 Project 1 Diary
 Aisha Peters
 
+Date: 2/22/2017
+Task: Cleaning Code
+Time: 30 min
+Difficulty: 1
+
+Looked over code and added comments, fixed typos, and determined areas that needed more clarification.
+
 Date: 2/20/2017
 Task: Pair Coding
 Time: 2 hr

@@ -12,11 +12,11 @@ bool board::placeShip(ship &place)
 {
 	if (place.good) //if the coordinates are valid
 	{
-		for (auto i : place.damage) //check for ship overlap
+		for (auto i : place.damage) //check for ship overlap at all coordinates
 		{
 			if (checkHit(i.x, i.y)) return false;
 		}
-		
+
 		playerShips.push_back(place); //add validated ship
 		return true;
 	}
@@ -48,9 +48,9 @@ void board::updateGrid(int hx, int hy)
 		{
 			char h = '1';
 			if (j.hit) h = '0';	//if a ship is hit
-			
+
 				grid[j.x][j.y] = h;
-			
+
 		}
 	}
 
@@ -65,8 +65,7 @@ board::board()
 
 
 
-
-
+//Testing environment for code
 int main()
 {
 	bool test;
@@ -89,21 +88,21 @@ int main()
 	bool one = true, two = true;
 
 	cout << (test ? "true" : "false")<<"\n";
-	
+
     return 0;
 }
 
 //Creates a ship object of tpye t with the given coordinates and orientation
-ship::ship(int x, int y, int t, bool verticle) : type(t)
+ship::ship(int x, int y, int t, bool vertical) : type(t)
 {
-	
+
 	for (int i = 0; i < getSize(); i++) // while i is within boundary of ship type size
 	{
 		shipData dataPoint(x, y); // create coordinate point
 		if ((x >= 0 && x <= 9) && (y >= 0 && y <= 9)) // if valid coordinates
 		{
 			good = true; // update flag
-			damage.push_back(dataPoint); //add coordinates
+			damage.push_back(dataPoint); //add coordinates to ship's data
 		}
 		else
 		{
@@ -111,7 +110,7 @@ ship::ship(int x, int y, int t, bool verticle) : type(t)
 			break;
 		}
 
-		verticle ? y++ : x++; //if verticle, increase y coordinate, else increase x
+		vertical ? y++ : x++; //if vertical, increase y coordinate, else increase x
 
 	}
 }

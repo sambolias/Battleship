@@ -6,7 +6,6 @@
 
 #pragma once
 
-
 #include <iostream>
 using std::cout;
 
@@ -18,7 +17,6 @@ using std::vector;
 
 #include <string>
 using std::string;
-
 
 
 class ship
@@ -35,8 +33,8 @@ class ship
 	};
 
 	int type; //1-5 for 5 ship types
-	
-	
+
+
 public:
 
 	ship(int x, int y, int type, bool verticle);
