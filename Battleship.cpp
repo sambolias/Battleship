@@ -54,7 +54,7 @@ void board::updateGrid(int hx, int hy)
 		}
 	}
 
-	grid[hx][hy] = 'x';
+	if (grid[hx][hy] == '-') grid[hx][hy] = 'x';
 }
 
 //Initializes an empty board
@@ -64,14 +64,13 @@ board::board()
 }
 
 
-
 //Testing environment for code
 int main()
 {
 	bool test;
 	board b;
 	ship s(5, 5, 3, false);
-	ship t(5, 5, 5, true);
+	ship t(4, 5, 2, true);
 	b.placeShip(s);
 	test = b.placeShip(t);
 	b.updateGrid(0, 0);
@@ -89,6 +88,8 @@ int main()
 
 	cout << (test ? "true" : "false")<<"\n";
 
+
+	while (std::cin.get() != 10);
     return 0;
 }
 
