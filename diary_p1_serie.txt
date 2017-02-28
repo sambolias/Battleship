@@ -1,6 +1,16 @@
 CS372 Project 1 Diary
 Sam Erie
 
+Date: 2/27/17
+Task: Pair Coding
+Time: 1 hr 45 min
+Difficulty: 1
+
+Worked on the player class, building a command prompt for 
+player to be able to place ships a-j on y axis, or 1-10
+on x axis, just as in board game. Prompt tells what ships
+are being placed and how, repeats for ships with invalid
+coordinates, and ends after placing 5 ships. All tests good.
 
 Date: 2/20/2017
 Task: Pair Coding

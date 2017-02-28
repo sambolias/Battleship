@@ -8,6 +8,7 @@
 
 #include <iostream>
 using std::cout;
+using std::cin;
 
 #include <algorithm>
 using std::fill_n;
@@ -19,10 +20,12 @@ using std::vector;
 using std::string;
 
 
+
 class ship
 {
 	struct shipData
 	{
+
 		shipData(int xx, int yy)
 		{
 			x = xx;
@@ -37,7 +40,8 @@ class ship
 
 public:
 
-	ship(int x, int y, int type, bool verticle);
+	ship(int x, int y, int type, bool vertical);
+
 	bool good = false;
 	vector<shipData> damage;
 	int getSize()
@@ -82,6 +86,7 @@ public:
 
 	bool placeShip(ship &place);
 	bool checkHit(int x, int y);
+	void updateGrid();
 	void updateGrid(int hx, int hy);
 //private:	need public for debugging
 
@@ -94,10 +99,17 @@ public:
 
 class player
 {
+public:
 	board playerBoard;
+	void initBoard();
+	//virtual for class computer: public player
+	virtual ship pickShip();
+//public:
+	board & getBoard();
 };
 
 class game
 {	//this handles game prompts, all output to console of gfx done externally
 	player user[2];
+
 };
