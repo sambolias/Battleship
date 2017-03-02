@@ -10,12 +10,31 @@
 class player
 {
 public:
-
+	player() = default;
+	~player() = default;
 	void initBoard();
-	//virtual for class computer: public player
-	virtual ship pickShip();
+	virtual coord playerTurn();
 	board & getBoard();
+	bool computer = false;
 
 private:
+	virtual ship pickShip();
+	coord pickCoord();
 	board playerBoard;
+	
+	
+};
+
+class enemy : public player
+{
+public:
+	enemy();
+	~enemy() = default;
+	virtual coord playerTurn();
+	virtual ship pickShip();
+private:
+	vector<coord> hits;
+	coord lastHit;
+	bool sank;
+
 };

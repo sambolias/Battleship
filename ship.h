@@ -9,6 +9,27 @@
 using std::string;
 #include <vector>
 using std::vector;
+#include <algorithm>
+using std::fill_n;
+#include <vector>
+using std::vector;
+#include <iostream>
+using std::cout;
+using std::cin;
+#include <time.h>
+
+struct coord
+{
+	coord() = default;
+	coord(int xx, int yy);
+
+	int x;
+	int y;
+
+	
+};
+
+bool operator==(const coord & a,const coord & b);
 
 class ship
 {
@@ -23,6 +44,8 @@ private:
 		}
 		int x, y;
 		bool hit = false;
+	public:
+		void takeHit();
 	};
 
 
@@ -33,8 +56,12 @@ public:
 	int getSize();
 	string getName();
 	bool isGood();
+	int getLife();
+	void isHit();
 
 private:
+	
 	int type; //1-5 for 5 ship types
 	bool good = false;
+	int life;
 };

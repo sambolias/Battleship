@@ -9,7 +9,14 @@
 #include "player.h"
 
 class game
-{	//this handles game prompts, all output to console of gfx done externally
-	player user[2];
+{	
+	player * user[2];
+	bool turn = false;
+	bool gameover = false;
+	int sumFleet(vector<ship> & fleet);
+	void drawBoards();
 
+public:
+	game();
+	void play();
 };

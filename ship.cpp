@@ -10,6 +10,8 @@
 //Creates a ship object of tpye t with the given coordinates and orientation
 	ship::ship(int x, int y, int t, bool vertical) : type(t)
 	{
+		life = getSize();	//life is ship size for undamaged ship
+
 		for (int i = 0; i < getSize(); i++) // while i is within boundary of ship type size
 		{
 			shipData dataPoint(x, y); // create coordinate point
@@ -64,4 +66,32 @@
 //Returns good if ship is valid, false otherwise
 	bool ship::isGood(){
 		return good;
+	}
+
+	int ship::getLife()
+	{
+		return life;
+	}
+
+	void ship::isHit()
+	{
+		life--;
+		if (life == 0)
+		{
+			cout << "\nYou sunk my " << getName() << "!\n";
+		}
+	}
+
+	coord::coord(int xx, int yy): x(xx), y(yy)
+	{
+	}
+
+	bool operator==(const coord & a,const coord & b)
+	{
+		return (a.x == b.x && a.y == b.y);
+	}
+
+	void ship::shipData::takeHit()
+	{ 
+		hit = true;
 	}

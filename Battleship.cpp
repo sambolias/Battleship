@@ -6,12 +6,13 @@
 
 #include "game.h"
 
-#include <iostream>
-using std::cin;
+//#include <iostream>
+//using std::cin;
 
 //Testing environment for code
 int main()
 {
+	//these were our tests -- save elsewhere?
 	/*bool test;
 	board b;
 	ship s(5, 5, 3, false);
@@ -20,6 +21,7 @@ int main()
 	test = b.placeShip(t);
 	b.updateGrid(0, 0);
 	*/
+	/*
 	player b;
 	b.initBoard();
 	b.getBoard().updateGrid();
@@ -32,12 +34,17 @@ int main()
 		}
 		cout << "\n";
 	}
-
+	*/
 	/*bool one = true, two = true;
 
 	cout << (test ? "true" : "false")<<"\n";
 	*/
 
-	while (std::cin.get() != 10);
+	game newGame;
+
+	newGame.play();
+
+	cin.clear();
+	while (cin.get() != 10);
     return 0;
 }

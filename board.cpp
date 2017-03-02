@@ -46,6 +46,21 @@ bool board::checkHit(int x, int y)
 	return false;
 }
 
+bool board::attackBoard(coord hit)
+{
+	if (checkHit(hit.x, hit.y))
+	{
+		if (attackShip(hit))
+		{
+				return true;	//it was hit
+		}
+
+		return false;	//it was already hit
+	}
+	updateGrid(hit.x, hit.y);
+	return false;	//complete miss
+}
+
 //Updates board vectors to reflect ship and hit locations
 void board::updateGrid()
 {
@@ -53,8 +68,8 @@ void board::updateGrid()
 	{
 		for (auto j : i.damage) //loop through each ship's coordinates
 		{
-			char h = '1';
-			if (j.hit) h = '0';	//if a ship is hit
+			char h = 'U';
+			if (j.hit) h = 'X';	//if a ship is hit
 
 			grid[j.x][j.y] = h;
 
@@ -85,13 +100,91 @@ int board::fleetSize()
 //Prints the grid
 void board::print()
 {
-	for (int y = 0; y < 10; y++)
+
+	for (int y = 0; y <= 10; y++)
 	{
-		for (int x = 0; x < 10; x++)
+		for (int x = 0; x <= 10; x++)
 		{
-			cout << getCord(x,y) << " ";
+			if (y == 0 && x == 0)
+			{
+				cout << "  ";
+			}
+			else if (y == 0)
+			{
+				cout << x << " ";	//added buffer works here because users don't like 0
+			}
+			else if (x == 0)
+			{
+				cout << ((char)(y + 96)) << " ";	//97 is a, subtract 1 to make up for buffer
+			}
+			else
+			{
+				char out =  getCord(x - 1, y - 1);	//1 is buffer for numbers
+				if (out == 'x')out = '-';
+				cout << out << " ";
+			}
 		}
 		cout << "\n";
 	}
-	cout << "\n";
+
+}
+
+void board::printEnemy()
+{
+	for (int y = 0; y <= 10; y++)
+	{
+		for (int x = 0; x <= 10; x++)
+		{
+			if (y == 0 && x == 0)
+			{
+				cout << "  ";
+			}
+			else if (y == 0)
+			{
+				cout << x << " ";	//added buffer works here because users don't like 0
+			}
+			else if (x == 0)
+			{
+				cout << ((char)(y + 96)) << " ";	//97 is a, subtract 1 to make up for buffer
+			}
+			else {
+				char out = getCord(x - 1, y - 1);
+				if (out == 'U')out = '-';
+		
+				cout<<out<< " ";	
+
+			}
+		}
+		cout << "\n";
+	}
+	
+}
+
+vector<ship>& board::getFleet()
+{
+	return playerFleet;
+}
+
+bool board::attackShip(coord hit)
+{
+	for (int i = 0; i < playerFleet.size(); i++) //loop through player's ships
+	{
+		for (int j = 0; j < playerFleet[i].damage.size(); j++) //loop through each ship's coordinates
+		{
+			if (hit.x == playerFleet[i].damage[j].x && hit.y == playerFleet[i].damage[j].y)
+			{
+				if (!playerFleet[i].damage[j].hit)
+				{
+		
+					playerFleet[i].isHit();	//register hit
+									
+					playerFleet[i].damage[j].takeHit();
+					updateGrid();
+					return true; //successful hit
+				}
+				break;	//if it was already hit there
+			}
+		}
+	}
+	return false;
 }
