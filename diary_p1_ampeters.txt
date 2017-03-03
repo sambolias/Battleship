@@ -1,6 +1,25 @@
 CS372 Project 1 Diary
 Aisha Peters
 
+Date: 3/2/17
+Task: Cleaning Code and Presentation Writeup
+Time: 3 hours
+Difficulty: 1
+
+Cleaned up code and created presentation slides. The project is now complete and will be
+presended 3/3/2017. The processes used to work on this project were all very useful
+and I can see how they would be essential to large scale projects. From testing each
+small increment of code to making everything neat and understandable, without these
+design steps the code would have been less consistent with one style and possibly
+hard to understand.
+
+Date: 3/1/17
+Task: Pair Coding
+Time: 3 hours
+Difficulty: 3
+
+Created game class and finished linking everything together for a runnable game interface.
+
 Date: 2/27/2017
 Task: Cleaning Code
 Time: 2 hr
