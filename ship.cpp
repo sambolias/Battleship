@@ -78,7 +78,7 @@
 		life--;
 		if (life == 0)
 		{
-			cout << "\nYou sunk my " << getName() << "!\n";
+			cout << getName() << " sunk!";
 		}
 	}
 
@@ -92,6 +92,6 @@
 	}
 
 	void ship::shipData::takeHit()
-	{ 
+	{
 		hit = true;
 	}

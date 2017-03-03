@@ -20,10 +20,10 @@ void player::initBoard()
 		good = playerBoard.placeShip(pickShip());
 
 		if (!good && !computer) { cout << "You can't place your ship there\n"; }//maybe this should say why
-		else 
+		else
 		{
 			playerBoard.updateGrid();
-			if(!computer) playerBoard.print(); 
+			if(!computer) playerBoard.print();
 		}
 
 	}
@@ -33,17 +33,17 @@ void player::initBoard()
 //Promps user for ship coordinates and places valid ships on board
 ship player::pickShip()
 {
-	//these should be placed in class, instead of inaccessable ones in ship class
+	//these should be placed in class, instead of inaccessible ones in ship class
 	vector<string> shipTypes = { "Destroyer","Submarine","Cruiser","Battleship","Carrier" };
 	vector<int> shipSizes = { 2,3,3,4,5 };
 
-	
+
 	char choice;
 	bool vertical = false;
 	int shipNumber = playerBoard.fleetSize();
 
 	cout << "Placing your " << shipTypes[shipNumber] << " which is " << shipSizes[shipNumber] << " squares long.\n";
-	
+
 	coord place = pickCoord();
 
 	cout << "\nDo you want to place that vertically (y/n): ";
@@ -71,7 +71,7 @@ board &player::getBoard()
 
 coord player::pickCoord()
 {
-	int x, y; 
+	int x, y;
 	char charY;
 	bool good=false;
 

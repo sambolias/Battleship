@@ -68,8 +68,8 @@ void board::updateGrid()
 	{
 		for (auto j : i.damage) //loop through each ship's coordinates
 		{
-			char h = 'U';
-			if (j.hit) h = 'X';	//if a ship is hit
+			char h = 'Q';
+			if (j.hit) h = 'x';	//if a ship is hit
 
 			grid[j.x][j.y] = h;
 
@@ -80,7 +80,7 @@ void board::updateGrid()
 //Updates given board coordinates
 void board::updateGrid(int hx, int hy)
 {
-	if (grid[hx][hy] == '-') grid[hx][hy] = 'x';
+	if (grid[hx][hy] == '-') grid[hx][hy] = '.';
 
 	updateGrid();
 }
@@ -100,9 +100,10 @@ int board::fleetSize()
 //Prints the grid
 void board::print()
 {
-
+    cout << " ";
 	for (int y = 0; y <= 10; y++)
 	{
+	    cout.width(25);
 		for (int x = 0; x <= 10; x++)
 		{
 			if (y == 0 && x == 0)
@@ -120,7 +121,7 @@ void board::print()
 			else
 			{
 				char out =  getCord(x - 1, y - 1);	//1 is buffer for numbers
-				if (out == 'x')out = '-';
+				if (out == '.')out = '-';
 				cout << out << " ";
 			}
 		}
@@ -131,8 +132,10 @@ void board::print()
 
 void board::printEnemy()
 {
+    cout << " ";
 	for (int y = 0; y <= 10; y++)
 	{
+	    cout.width(25);
 		for (int x = 0; x <= 10; x++)
 		{
 			if (y == 0 && x == 0)
@@ -149,15 +152,15 @@ void board::printEnemy()
 			}
 			else {
 				char out = getCord(x - 1, y - 1);
-				if (out == 'U')out = '-';
-		
-				cout<<out<< " ";	
+				if (out == 'Q')out = '-';
+
+				cout<<out<< " ";
 
 			}
 		}
 		cout << "\n";
 	}
-	
+
 }
 
 vector<ship>& board::getFleet()
@@ -167,17 +170,17 @@ vector<ship>& board::getFleet()
 
 bool board::attackShip(coord hit)
 {
-	for (int i = 0; i < playerFleet.size(); i++) //loop through player's ships
+	for (unsigned int i = 0; i < playerFleet.size(); i++) //loop through player's ships
 	{
-		for (int j = 0; j < playerFleet[i].damage.size(); j++) //loop through each ship's coordinates
+		for (unsigned int j = 0; j < playerFleet[i].damage.size(); j++) //loop through each ship's coordinates
 		{
 			if (hit.x == playerFleet[i].damage[j].x && hit.y == playerFleet[i].damage[j].y)
 			{
 				if (!playerFleet[i].damage[j].hit)
 				{
-		
+
 					playerFleet[i].isHit();	//register hit
-									
+
 					playerFleet[i].damage[j].takeHit();
 					updateGrid();
 					return true; //successful hit

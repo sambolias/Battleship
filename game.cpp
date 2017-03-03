@@ -14,33 +14,31 @@ void game::play()
 	cout << "\n\n\n\n";
 	coord attack(0,0);
 	bool hit;
-	
+
 	//user[turn] works for 2 players because boolean value = 0 or 1
 
 	while (!gameover)
 	{
-		
 		if (!turn)	drawBoards();
 		attack = user[turn]->playerTurn();
 
 		hit = user[!turn]->getBoard().attackBoard(attack);
-	
 
 		if (hit)
 		{
 			if (!turn)
 			{
-				cout << "It's a hit!\n";
+				cout << "\nIt's a hit!\n";
 			}
-			else cout << "You got hit!\n";
+			else cout << "\nYou got hit!\n";
 		}
 		else
 		{
 			if(!turn)
-			cout << "You missed.\n";
+			cout << "\nYou missed.\n";
 		}
-		
-		
+
+
 		//change turn
 		turn = !turn;
 
@@ -65,9 +63,8 @@ int game::sumFleet(vector<ship>& fleet)
 
 void game::drawBoards()
 {
-	cout << "       YOUR BOARD\n";
+	cout << "                              YOUR BOARD\n";
 	user[turn]->getBoard().print();
-	cout << "     ENEMY'S BOARD\n";
+	cout << "                              ENEMY'S BOARD\n";
 	user[!turn]->getBoard().printEnemy();
-
 }
